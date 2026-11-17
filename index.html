@@ -1,190 +1,111 @@
 <!doctype html>
-<html lang="ca"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Eines d'IA senzilles, funcionals i provades cada dia a l'aula: avaluar, gamificar, crear i comunicar amb criteri. Gerard Sánchez Moya · Gerard Labs.">
+<html lang="ca"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Docentia · Una altra manera de ser docent, amb Claude</title>
+<meta name="description" content="IA aplicada a l'aula, provada cada dia: correcció, exàmens, gamificació i documentació. Eines pròpies by Gerard.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Una altra manera de ser docent, amb Claude">
-<meta property="og:description" content="Eines d'IA senzilles, funcionals i provades cada dia a l'aula: avaluar, gamificar, crear i comunicar amb criteri. Gerard Sánchez Moya · Gerard Labs.">
+<meta property="og:title" content="Docentia · Una altra manera de ser docent, amb Claude">
+<meta property="og:description" content="IA aplicada a l'aula, provada cada dia. 260 eines pròpies by Gerard.">
 <meta property="og:image" content="https://gsanch2igb.github.io/docentia/poster_preview.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:url" content="https://gsanch2igb.github.io/docentia/">
 <meta name="twitter:card" content="summary_large_image">
-<title>Gerard Labs · Una altra manera de ser docent, amb Claude</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="estil.css">
 <style>
-@page{size:1240px 1754px;margin:0}
-html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-:root{--bg:#0A0D13;--ink:#EEF2F7;--muted:#98A3B3;--ice:#8ED0E4;--gold:#CDB98E;--line:rgba(255,255,255,.12)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{width:1240px;height:1754px;overflow:hidden;position:relative;color:var(--ink);font-family:"Segoe UI Light","Segoe UI",Arial,sans-serif;font-weight:300;
-background:
- radial-gradient(900px 700px at 92% -6%,rgba(142,208,228,.20),transparent 60%),
- radial-gradient(800px 700px at -8% 104%,rgba(205,185,142,.13),transparent 60%),
- var(--bg)}
-.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:62px 62px;
- -webkit-mask-image:linear-gradient(180deg,#000 0,transparent 55%);mask-image:linear-gradient(180deg,#000 0,transparent 55%)}
-.page{position:relative;padding:60px 92px 0}
-.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--muted);font-weight:400}
-.top span:first-child{color:var(--ice)}
-.hero{margin-top:38px}
-.eyebrow{font-size:16px;letter-spacing:7px;text-transform:uppercase;color:var(--gold);font-weight:400}
-h1{font-size:80px;line-height:1.03;font-weight:200;letter-spacing:-2px;margin-top:20px}
-h1 b{font-weight:300;background:linear-gradient(90deg,#fff,var(--ice));-webkit-background-clip:text;background-clip:text;color:transparent}
-.claim{margin-top:20px;font-size:22px;color:var(--muted);max-width:900px;line-height:1.5}
-.claim em{color:var(--ink);font-style:normal;font-weight:400}
-.hair{height:1px;margin:28px 0 0;background:linear-gradient(90deg,var(--ice),rgba(255,255,255,.08) 60%,transparent)}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);column-gap:44px}
-.cap{padding:15px 0 13px;border-bottom:1px solid var(--line)}
-.cap .n{font-size:13px;letter-spacing:4px;color:var(--gold);font-weight:400}
-.cap h2{font-size:27px;font-weight:400;margin-top:8px;letter-spacing:.3px}
-.cap .l{font-size:16px;color:var(--ice);margin-top:3px;font-weight:400;letter-spacing:.3px}
-.cap ul{list-style:none;margin-top:12px}
-.cap li{font-size:16.5px;line-height:1.38;color:#B9C3D0;padding:3px 0 3px 18px;position:relative}
-.cap li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:1px;background:var(--ice)}
-.cap li b{font-weight:400;color:#fff}
-.day{margin-top:18px;padding:18px 34px 16px;border:1px solid rgba(142,208,228,.35);border-radius:6px;background:linear-gradient(135deg,rgba(142,208,228,.08),rgba(142,208,228,.015))}
-.day .k{font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);font-weight:400}
-.day h3{font-size:28px;font-weight:300;margin:4px 0 12px}
-.day .row{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
-.day .c b{display:block;font-size:12.5px;letter-spacing:4px;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:5px}
-.day .c p{font-size:16px;line-height:1.42;color:#B9C3D0}
-.flow{margin-top:16px;padding:18px 34px 16px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.012))}
-.flow .k{font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);font-weight:400}
-.flow h3{font-size:26px;font-weight:300;margin:4px 0 12px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);position:relative}
-.steps::before{content:"";position:absolute;left:8px;right:8px;top:8px;height:1px;background:linear-gradient(90deg,var(--ice),rgba(142,208,228,.25))}
-.st{padding-right:28px}
-.st i{display:block;width:16px;height:16px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ice);box-shadow:0 0 14px rgba(142,208,228,.6)}
-.st b{display:block;font-size:21px;font-weight:400;margin:12px 0 4px}
-.st p{font-size:15.5px;line-height:1.4;color:#AEB9C7}
-.two{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:30px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}.two b{display:block;font-size:12.5px;letter-spacing:4px;text-transform:uppercase;color:var(--ice);font-weight:600;margin-bottom:5px}.two p{font-size:15.5px;line-height:1.42;color:#B9C3D0}
-.priv{margin-top:18px;display:flex;align-items:center;gap:22px;padding:14px 24px;border:1px solid rgba(205,185,142,.45);border-radius:6px;background:rgba(205,185,142,.06)}
-.priv .k{font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:400;white-space:nowrap}
-.priv p{font-size:16px;line-height:1.4;color:#D5D9E0}.priv p b{font-weight:400;color:#fff}
-.stats{display:grid;grid-template-columns:repeat(5,1fr);margin-top:18px}
-.stats div{border-left:1px solid var(--line);padding:2px 0 2px 22px}
-.stats div:first-child{border-left:0;padding-left:0}
-.stats b{display:block;font-size:40px;font-weight:200;letter-spacing:-1px;color:#fff;line-height:1}
-.stats span{display:block;margin-top:5px;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:400}
-.disc{position:absolute;left:92px;right:92px;bottom:58px;text-align:center;font-size:18px;letter-spacing:1.2px;color:#C9D3DF;font-weight:300;font-style:italic;font-family:Georgia,"Times New Roman",serif}
-.sig{position:absolute;left:92px;right:92px;bottom:34px;display:flex;justify-content:space-between;align-items:flex-end;padding-top:20px;border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(142,208,228,.7),rgba(255,255,255,.07) 70%,transparent) 1}
-.sig .who b{display:block;font-size:21px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:#fff}
-.sig .who span{display:block;margin-top:8px;font-size:13px;letter-spacing:3.5px;text-transform:uppercase;color:var(--ice);font-weight:400}
-.sig .mark{font-size:13px;letter-spacing:7px;text-transform:uppercase;color:var(--gold);font-weight:400;padding-bottom:2px}
-.foot{display:none;position:absolute;left:92px;right:92px;bottom:24px;display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:4px;text-transform:uppercase;color:#6F7A89;font-weight:400}
-@media print{h1 b{background:none !important;-webkit-text-fill-color:#BFE3F0;color:#BFE3F0}}
-html{background:#0A0D13;overflow-x:hidden}
-body{margin:0 auto}
-/* MOBILE-RESPONSIVE */
-@media (max-width:900px){
- body{width:auto;height:auto;overflow:visible}
- .page{padding:26px 22px 8px}
- .top{font-size:10px;letter-spacing:3px;flex-wrap:wrap;gap:6px}
- .hero{margin-top:26px}
- .eyebrow{font-size:11px;letter-spacing:4px}
- h1{font-size:40px;letter-spacing:-1px;margin-top:12px}
- .claim{font-size:17px;margin-top:14px}
- .hair{margin-top:22px}
- .cols{grid-template-columns:1fr}
- .cap{border-bottom:1px solid var(--line) !important;padding:18px 0 14px}
- .cap h2{font-size:24px}.cap li{font-size:16px}.cap .l{font-size:15px}
- .day,.flow{padding:18px 18px}
- .day .row{grid-template-columns:1fr;gap:14px}
- .day .c p,.st p,.two p{font-size:15px}
- .steps{grid-template-columns:1fr;gap:16px}.steps::before{display:none}
- .st{padding-right:0}
- .two{grid-template-columns:1fr;gap:16px}
- .priv{flex-direction:column;align-items:flex-start;gap:8px}
- .priv p{font-size:15px}
- .stats{grid-template-columns:repeat(2,1fr);row-gap:16px}
- .stats div:nth-child(odd){border-left:0;padding-left:0}
- .stats div:nth-child(5){grid-column:1 / -1;border-left:0;padding-left:0}
- .sig{position:static;margin:26px 22px 30px;flex-direction:column;align-items:flex-start;gap:14px}
- .sig .who b{font-size:17px;letter-spacing:4px}
- .sig .who span{font-size:11px;letter-spacing:2px}
- .disc{display:none}
-}
+.mark{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;border:1px solid rgba(205,185,142,.5);padding:6px 12px;border-radius:2px}
+.own{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;padding:34px 36px;border:1px solid rgba(205,185,142,.5);border-radius:8px;background:linear-gradient(160deg,rgba(205,185,142,.10),rgba(205,185,142,.02));margin-top:30px}
+.own .num{font-size:clamp(84px,14vw,150px);font-weight:200;line-height:.9;letter-spacing:-5px;background:linear-gradient(180deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.own .num small{display:block;font-size:13px;letter-spacing:6px;color:var(--gold);-webkit-text-fill-color:var(--gold);margin-top:10px;font-weight:400;text-transform:uppercase}
+.own p{color:#C9D0DA;font-size:18px}
+.own p+p{margin-top:10px;color:var(--muted);font-size:16px}
+@media(max-width:860px){.own{grid-template-columns:1fr;gap:18px;padding:26px 22px}}
 </style></head><body>
-<div class="grid"></div>
-<div class="page">
-  <div class="top"><span>Gerard Labs</span><span>El futur ja és present a l'aula</span></div>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="index.html"><img src="logo.svg" alt="docentia by Gerard"></a>
+    <div class="links"><a href="#que">Què és</a><a href="#propi">Eines pròpies</a><a class="btn" href="venda.html">Pàgina de venda</a></div>
+  </nav>
 
-  <div class="hero">
-    <div class="eyebrow">Ambaixador de la IA per a docents</div>
+  <header class="hero">
+    <div class="eyebrow">IA per a docents · provada cada dia a l'aula</div>
     <h1>Una altra manera<br>de ser docent, <b>amb Claude.</b></h1>
-    <div class="claim">La IA no substitueix el docent: <em>transforma la seva manera de treballar</em>. Menys paperassa, més temps per a l'alumnat, i tot sota el seu criteri. Senzill, funcional i provat cada dia a l'aula.</div>
-  </div>
-  <div class="hair"></div>
+    <p class="lead">Menys hores davant d'un Word o d'un Excel, <em>entregues corregides el mateix dia</em> i més temps per a l'alumnat. Tot ha nascut en una aula real i funciona cada dia, amb la <em>privacitat primer</em>.</p>
+    <a class="cta" href="venda.html"><small>Per a centres i docents</small>Pàgina de venda</a>
+    <a class="cta ghost" href="cartell_docentia.pdf" download><small>Cartell informatiu · PDF</small>Descarrega el cartell</a>
+  </header>
 
-  <div class="cols">
-    <div class="cap"><div class="n">01</div><h2>Avaluar</h2><div class="l">Notes justes i quadrades</div>
-      <ul><li><b>Nota del dia</b> en una frase, a la graella</li>
-      <li><b>Examen web bloquejat</b>, un sol intent</li>
-      <li><b>Correcció amb rúbrica</b> i entregues ordenades</li>
-      <li><b>Auditoria</b> de pesos i ponderacions</li></ul></div>
-    <div class="cap"><div class="n">02</div><h2>Gamificar</h2><div class="l">Aprendre amb ganes</div>
-      <ul><li><b>Kahoot</b> a mida del contingut</li>
-      <li><b>Vídeo-quiz</b>: el vídeo s'atura i pregunta</li>
-      <li><b>Pasaparaula</b> amb càmera</li>
-      <li><b>Cartells QR</b> per entrar des del mòbil</li></ul></div>
-    <div class="cap"><div class="n">03</div><h2>Crear</h2><div class="l">Un curs sencer, documentat</div>
-      <ul><li><b>Teoria i activitat</b> en un sol document</li>
-      <li><b>Proves escrites</b> amb clau de correcció</li>
-      <li><b>Rúbriques</b> i instruments</li>
-      <li><b>Programacions</b> i presentacions</li></ul></div>
-    <div class="cap" style="border-bottom:0"><div class="n">04</div><h2>Comunicar</h2><div class="l">Humà, curt i amb criteri</div>
-      <ul><li><b>Correus de nota</b> només amb la meva ordre</li>
-      <li><b>Classroom</b> i agenda sota control</li>
-      <li><b>Alumnat nou</b> al dia en un correu</li></ul></div>
-    <div class="cap" style="border-bottom:0"><div class="n">05</div><h2>Gestionar</h2><div class="l">El dia a dia del centre</div>
-      <ul><li><b>Comandes</b> amb control de preus</li>
-      <li><b>FCT i sBID</b>: empreses i acords</li>
-      <li><b>Memòria viva</b> de cada mòdul</li></ul></div>
-    <div class="cap" style="border-bottom:0"><div class="n">06</div><h2>Compartir</h2><div class="l">De la meva aula a la teva</div>
-      <ul><li><b>Guia</b> per a col·legues</li>
-      <li><b>Còpia de seguretat</b> del sistema</li>
-      <li><b>Tallers i cursos</b> en preparació</li></ul></div>
-  </div>
-
-  <div class="day">
-    <div class="k">07 · El dia a dia</div>
-    <h3>Un suport que t'acompanya cada classe</h3>
-    <div class="row">
-      <div class="c"><b>Abans</b><p>Què em toca avui, quins documents tinc a mà o he de projectar, quins recordatoris tinc.</p></div>
-      <div class="c"><b>Durant</b><p>Full de ruta d'una pàgina, Kahoot, QR, exàmens i tot a punt.</p></div>
-      <div class="c"><b>Després</b><p>Queda reflectit el que s'ha fet i va nodrint la memòria del curs.</p></div>
+  <section id="que">
+    <div class="k">Què és Docentia</div>
+    <h2>Un sistema de treball per a docents, no un curs d'IA.</h2>
+    <p class="lead">Són eines i fluxos concrets que ja estic fent servir a classe. El docent decideix i valida, l'IA fa la feina pesada. <em>No cal saber informàtica.</em></p>
+    <div class="grid3">
+      <div class="box"><b>Corregir en minuts</b><p>Les entregues es llegeixen, es corregeixen amb la teva rúbrica i les notes van a la graella amb el teu vistiplau.</p></div>
+      <div class="box"><b>Classes que enganxen</b><p>Kahoots, vídeo-quizzes i jocs fets a mida del contingut i del grup.</p></div>
+      <div class="box"><b>Papers ordenats</b><p>Programacions, fitxes, rúbriques i pesos quadrats, sense errors de càlcul.</p></div>
     </div>
-  </div>
+  </section>
 
-  <div class="flow">
-    <div class="k">Flux de treball</div>
-    <h3>Amb Claude Code · conversa, pont i execució</h3>
-    <div class="steps">
-      <div class="st"><i></i><b>Converso</b><p>Parlo amb Claude, de manera fluida.</p></div>
-      <div class="st"><i></i><b>Es desa al pont</b><p>Tot el creat va a la carpeta de Claude Code.</p></div>
-      <div class="st"><i></i><b>S'executa</b><p>Claude Code ho agafa i ho executa.</p></div>
+  <section id="propi">
+    <div class="k">Fet a mà · by Gerard</div>
+    <h2>No és un producte de catàleg. És tot creat per mi.</h2>
+    <div class="own">
+      <div class="num">260<small>eines pròpies</small></div>
+      <div>
+        <p>Cada eina l'he dissenyat, provat i polit amb alumnes reals: l'examen bloquejat, el corrector amb rúbrica, el Pasaparaula, el vídeo-quiz, la nota del dia…</p>
+        <p>Això és el que no trobaràs en cap altre lloc: <b style="color:#fff;font-weight:400">el sistema complet, ja rodat, firmat by Gerard.</b></p>
+      </div>
     </div>
-    <div class="two">
-      <div><b>Qualsevol projecte educatiu</b><p>Pot atendre amb cura tots els detalls de cada projecte que vagi arribant.</p></div>
-      <div><b>Una paraula, decenes de respostes</b><p>Amb «envia», cada alumne rep el seu comentari personal i la seva nota el mateix dia que entrega, i s'acaba la pila d'entregues per corregir un diumenge a la tarda. El docent decideix el ritme i el to.</p></div>
-      <div><b>Adéu als Word i Excel eterns</b><p>S'acaben les hores davant d'un Word o d'un Excel: documents, graelles i notes es generen i s'ordenen sols.</p></div>
+    <div class="caps">
+      <div><b>Examen web bloquejat</b><span>Un sol intent i registre de sortides.</span></div>
+      <div><b>Correcció amb rúbrica</b><span>Notes directes a la graella.</span></div>
+      <div><b>Pasaparaula</b><span>El rosco amb càmera, per a classe.</span></div>
+      <div><b>Vídeo-quiz</b><span>El vídeo s'atura i pregunta.</span></div>
+      <div><b>Nota del dia</b><span>Observació de pràctiques en una frase.</span></div>
+      <div><b>Documentació del curs</b><span>Teoria, activitats, proves i rúbriques.</span></div>
+      <div><b>Notes a Esfer@ en segons</b><span>De la graella a la plataforma del centre, sense passar-les a mà. <i>(en projecte)</i></span></div>
     </div>
-  </div>
+  </section>
 
-  <div class="priv"><span class="k">Protecció de dades</span><p><b>Primer, la privacitat.</b> Tot viu als comptes del centre (Google Workspace). La IA només rep el mínim imprescindible, sota el control i el vistiplau del docent. Tal com ho fem servir cada dia a la gestió de Classroom i de Gmail.</p></div>
+  <section>
+    <div class="k">Protecció de dades</div>
+    <h2>La privacitat va primer.</h2>
+    <div class="priv">
+      <p style="color:#fff;font-size:19px;font-weight:400">El docent decideix i valida. Res no surt sense el seu ok.</p>
+      <ul>
+        <li>Les dades viuen als comptes del centre (Google Workspace).</li>
+        <li>L'IA només rep el mínim imprescindible i no s'entrena amb les converses.</li>
+        <li>Les dades dels alumnes es queden privades.</li>
+        <li>Revisió periòdica i esborrat de dades que ja no calen.</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="stats">
-    <div><b>7</b><span>mòduls</span></div>
-    <div><b>370</b><span>documents</span></div>
-    <div><b>150</b><span>rúbriques</span></div>
-    <div><b>105</b><span>presentacions</span></div>
-    <div><b>260</b><span>eines pròpies</span></div>
-  </div>
+  <section>
+    <div class="me">
+      <div>
+        <div class="k">Qui sóc</div>
+        <h2>Gerard Sánchez Moya</h2>
+        <p>Docent i especialista en IA aplicada a l'aula. He convertit la meva manera de treballar amb Claude i l'he provat durant un curs sencer, en set mòduls reals. Ara t'ajudo a fer-ho a tu, sense tecnicismes.</p>
+      </div>
+      <div class="stats">
+        <div><b>7</b><span>mòduls</span></div>
+        <div><b>370</b><span>documents</span></div>
+        <div><b>150</b><span>rúbriques</span></div>
+        <div><b>260</b><span>eines pròpies</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="lema">«Entre tu i jo, el sistema ja està fet. Només cal posar-lo a l'abast de la teva aula.»</div>
+    <a class="cta" href="venda.html"><small>Tallers · implantació · assessoria</small>Veure què ofereixo</a>
+    <a class="cta ghost" data-contact href="venda.html#contacte"><small>Gratuït · 20 minuts</small>Vull una demostració</a>
+  </section>
+
+  <footer>
+    <b>Gerard Sánchez Moya</b> · Docent · Especialista en IA aplicada a l'aula<br>
+    Projecte independent. Claude és una marca d'Anthropic; aquest projecte no té cap vinculació comercial amb la companyia.
+  </footer>
 </div>
-<div class="sig">
-  <div class="who"><b>Gerard Sánchez Moya</b><span>Docent · Especialista en IA aplicada a l'aula</span></div>
-  <div class="mark">Gerard Labs</div>
-</div>
-<script>
-function fit(){document.documentElement.style.zoom=(window.innerWidth>=900?window.innerWidth/1240:1);}
-fit();addEventListener('resize',fit);
-</script>
+<script src="contacte.js"></script>
 </body></html>
